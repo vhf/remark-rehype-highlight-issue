@@ -16,5 +16,9 @@ unified()
   .use(rehypeHighlight)
   .use(rehypeStringify)
   .process(input, (err, vfile) => {
-    console.error({err}, vfile.toString())
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(vfile.toString())
+    }
   })
